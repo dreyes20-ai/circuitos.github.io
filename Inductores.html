@@ -1,74 +1,178 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inductores</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #c3ff93, #6bcf63);
+      background: linear-gradient(135deg, #eddbba, #ffd587);
       margin: 0;
-      padding: 40px;
-      color: #222;
+      padding-left: 250px;
+      padding-top: 40px;
+      color: #5c3c01;
     }
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 230px;
+      height: 100%;
+      background: #e8b75d;
+      padding: 25px;
+    }
+    .sidebar h2 { text-align: center; margin-bottom: 25px; }
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      transition: background 0.3s;
+    }
+    .sidebar a:hover { background: #ff9f1c; }
     .card {
-      max-width: 700px;
+      max-width: 750px;
       margin: auto;
       background: white;
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      animation: fadeIn 1s ease;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 15px;
+    h1 { text-align: center; }
+    .img-box { text-align: center; margin: 20px 0; }
+    .img-box img { width: 220px; }
+    .collapsible {
+      background: #599FE1; color: white;
+      cursor: pointer; padding: 12px;
+      width: 100%; border: none; border-radius: 8px;
+      text-align: left; font-size: 18px; margin-top: 15px;
     }
-    .img-box {
-      text-align: center;
-      margin-bottom: 20px;
+    .content {
+      display: none; padding: 15px;
     }
-    .img-box img {
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #6bcf63;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
+    .btn {
+      display: inline-block; padding: 10px 20px;
+      background: #599FE1; color: white;
+      border-radius: 8px; text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
     }
-    a:hover {
-      background: #55b850;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);} 
-      to {opacity: 1; transform: translateY(0);} 
+    .nav-arrows {
+      margin-top: 25px; display: flex;
+      justify-content: space-between;
     }
   </style>
 </head>
+
 <body>
+
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="index.html">Inicio</a>
+    <a href="resistores.html">Resistores</a>
+    <a href="capacitores.html">Capacitores</a>
+    <a href="inductores.html">Inductores</a>
+    <a href="diodos.html">Diodos</a>
+    <a href="transistores.html">Transistores</a>
+  </div>
+
   <div class="card">
     <h1>Inductores</h1>
 
     <div class="img-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Various_inductors.jpg/640px-Various_inductors.jpg" alt="Inductores">
+      <img src="/Images/inductor.jpg" alt="Inductor">
     </div>
 
-    <p><strong>Aquí agregarás tu información sobre inductores.</strong> Puedes describir cómo funcionan mediante campos magnéticos, sus usos más comunes y ejemplos en circuitos reales.</p>
+    <p><strong>What is an Inductor?</strong><br>
+    An inductor is a passive component that is used in most power electronic circuits to store energy in the form of magnetic energy when electricity is applied to it. One of the key properties of an inductor is that it impedes or opposes any change in the amount of current flowing through it. Whenever the current across the inductor changes, it either acquires charge or loses the charge in order to equalise the current passing through it. The inductor is also called a choke, a reactor or just a coil.</p>
 
-    <a href="index.html">⬅ Volver al menú</a>
+    <button class="collapsible">Codigo de Valores </button>
+    <div class="content">
+      <p><img src="/Images/tabla-de-colores-del-inductor.jpg" alt="tabla-de-colores-del-inductor"></p>
+    </div>
+
+    <button class="collapsible">📐 Tipos de Inductores</button>
+    <div class="content">
+      <ul>
+        <li><strong>Air-core inductors</strong> These have no magnetic core, just a coil of wire. Think of them like a spring of wire. They are very stable and work well at high frequencies, such as radio circuits.</li>
+        <li><strong>Iron-core inductors</strong> They have an iron core inside the coil. The iron makes the magnetic field stronger, so they store more energy. They are common in power circuits.</li>
+        <li><strong>Ferrite-core inductors:</strong> These use ferrite material. They are lighter than iron and work well at medium and high frequencies, like in power supplies.</li>
+        <li><strong>Variable inductors</strong> Their inductance can be adjusted. They are used for tuning, like in radios.</li>
+       
+      </ul>
+    </div>
+
+    <button class="collapsible">🧮 Fórmulas & Propiedades</button>
+    <div class="content">
+      <p><strong> Ley de Faraday-Lenz:</strong></p>
+      <p>V = L × (di/dt) </p>
+      <p>
+
+Donde: V = Voltaje (V), L = Inductancia (H), di/dt = Cambio de corriente</p>
+
+      
+    </div>
+
+    <button class="collapsible">⭐ Características</button>
+    <div class="content">
+      <ul>
+  <li><strong>Inductance (H):</strong> Indicates how much the inductor resists changes in current.</li>
+  <li><strong>Energy storage:</strong> Stores energy in the form of a magnetic field.</li>
+  <li><strong>Opposes current change:</strong> Prevents sudden increases or decreases in current.</li>
+  <li><strong>Frequency dependent:</strong> Opposes high-frequency AC more than low-frequency AC.</li>
+  <li><strong>DC behavior:</strong> Acts like a short circuit once current is stable.</li>
+  <li><strong>Core material:</strong> Air, iron, or ferrite cores affect inductance and efficiency.</li>
+</ul>
+
+    </div>
+
+    <button class="collapsible">🔧 Aplicaciones Prácticas</button>
+    <div class="content">
+      <ul>
+  <li>
+    <strong>Power supplies:</strong>
+    Used to smooth current and reduce electrical noise in chargers, computers, and TVs.
+  </li>
+  <li>
+    <strong>Filters:</strong>
+    Combined with capacitors to remove unwanted frequencies in audio systems and radios.
+  </li>
+  <li>
+    <strong>Transformers:</strong>
+    Transfer electrical energy between circuits, common in adapters and power converters.
+  </li>
+  <li>
+    <strong>Electric motors & relays:</strong>
+    Create magnetic fields that produce movement or switching actions.
+  </li>
+  <li>
+    <strong>Switching regulators:</strong>
+    Store and release energy efficiently in DC-DC converters and voltage regulators.
+  </li>
+  <li>
+    <strong>RF and communication circuits:</strong>
+    Used for tuning antennas, radios, and wireless communication devices.
+  </li>
+</ul>
+
+    </div>
+
+    <div class="nav-arrows">
+      <a class="btn" href="capacitores.html">⬅ Previous</a>
+      <a class="btn" href="diodos.html">Next ➡</a>
+    </div>
   </div>
+
+  <script>
+    const coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function(){
+        const content = this.nextElementSibling;
+        content.style.display = (content.style.display === "block") ? "none" : "block";
+      });
+    }
+  </script>
 </body>
 </html>

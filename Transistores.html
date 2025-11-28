@@ -1,75 +1,285 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transistores</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transistors</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      background: linear-gradient(135deg, #eddbba, #ffd587);
       margin: 0;
-      padding: 40px;
-      color: #222;
+      padding-left: 250px;
+      padding-top: 40px;
+      color: #5c3c01;
     }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 230px;
+      height: 100%;
+      background: #e8b75d;
+      padding: 25px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+
+    .sidebar a:hover {
+      background: #ff9f1c;
+    }
+
     .card {
-      max-width: 700px;
+      max-width: 750px;
       margin: auto;
       background: white;
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      animation: fadeIn 1s ease;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
+
+    h1 { text-align: center; }
+
     .img-box {
       text-align: center;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
+
     .img-box img {
-      width: 230px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      width: 220px;
     }
-    p {
+
+    .collapsible {
+      background: #599FE1;
+      color: white;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
       font-size: 18px;
-      line-height: 1.6;
+      margin-top: 15px;
     }
-    a {
+
+    .content {
+      display: none;
+      padding: 15px;
+    }
+
+    .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
-      background: #a18cd1;
+      background: #599FE1;
       color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
-    }
-    a:hover {
-      background: #8a72ba;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);} 
-      to {opacity: 1; transform: translateY(0);} 
+    .btn:hover {
+      background: #ff5d5d;
+    }
+
+    .nav-arrows {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
     }
   </style>
 </head>
+
 <body>
+
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="index.html">Inicio</a>
+    <a href="resistores.html">Resistores</a>
+    <a href="capacitores.html">Capacitores</a>
+    <a href="inductores.html">Inductores</a>
+    <a href="diodos.html">Diodos</a>
+    <a href="transistores.html">Transistores</a>
+  </div>
+
   <div class="card">
-    <h1>Transistores</h1>
+    <h1>Transistors</h1>
 
     <div class="img-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Transistors_%28electronic%29.jpg/640px-Transistors_%28electronic%29.jpg" alt="Transistores">
+      <img src="/Images/Transistor-1.png" alt="Transistor">
     </div>
 
-    <p><strong>Aquí agregarás tu información sobre transistores.</strong> Puedes explicar cómo funcionan como interruptores o amplificadores, sus tipos (BJT, MOSFET) y su importancia en la electrónica moderna.</p>
+    <p>
+      <strong>What is a Transistor?</strong><br>
+      A transistor is a type of semiconductor device that can be used to conduct and insulate electric current or voltage. A transistor basically acts as a switch and an amplifier. In simple words, we can say that a transistor is a miniature device that is used to control or regulate the flow of electronic signals.
+    </p>
 
-    <a href="index.html">⬅ Volver al menú</a>
+   <button class="collapsible">🧩 Types of Transistors</button>
+<div class="content">
+
+  <ul>
+    <li>
+      <strong>BJT (Bipolar Junction Transistor):</strong>
+      Controlled by <u>current</u>. Common types are <strong>NPN</strong> and <strong>PNP</strong>.
+      Used for switching and amplification.
+    </li>
+
+    <li>
+      <strong>MOSFET (Metal-Oxide Semiconductor FET):</strong>
+      Controlled by <u>voltage</u>. Very efficient and widely used in modern electronics.
+    </li>
+
+    <li>
+      <strong>JFET (Junction FET):</strong>
+      Voltage-controlled like MOSFETs, but older and simpler.
+    </li>
+
+    <li>
+      <strong>IGBT:</strong>
+      Used in high-power applications such as motor controllers and inverters.
+    </li>
+  </ul>
+
+</div>
+
+
+    <button class="collapsible">⚙️ Formula</button>
+    <div class="content">
+      <p>
+        Ganancia de Corriente (BJT) </p> <p>
+β = Ic / Ib </p>
+<p>
+
+Donde: β = Ganancia, Ic = Corriente colector, Ib = Corriente base </p>
+    </div>
+
+    <button class="collapsible">🔑 Key Parameters</button>
+<div class="content">
+
+  <ul>
+    <li>
+      <strong>Current Gain (β or hFE):</strong>
+      Shows how much the transistor amplifies current.
+    </li>
+
+    <li>
+      <strong>Maximum Voltage:</strong>
+      The highest voltage the transistor can handle safely.
+    </li>
+
+    <li>
+      <strong>Maximum Current:</strong>
+      The maximum current allowed through the collector or drain.
+    </li>
+
+    <li>
+      <strong>Power Rating:</strong>
+      The maximum power the transistor can dissipate without damage.
+    </li>
+
+    <li>
+      <strong>Switching Speed:</strong>
+      How fast the transistor can turn on and off.
+    </li>
+  </ul>
+
+</div>
+
+
+    <button class="collapsible">⭐ Main Characteristics</button>
+<div class="content">
+
+  <ul>
+    <li>
+      <strong>Acts as a Switch or Amplifier:</strong>
+      It can turn signals on and off or make weak signals stronger.
+    </li>
+
+    <li>
+      <strong>Three Terminals:</strong>
+      Base–Collector–Emitter (BJT) or Gate–Drain–Source (MOSFET).
+    </li>
+
+    <li>
+      <strong>Small Control Signal:</strong>
+      A small current or voltage can control a much larger one.
+    </li>
+
+    <li>
+      <strong>Fast Operation:</strong>
+      Works very quickly, even at high frequencies.
+    </li>
+
+    <li>
+      <strong>Heat Sensitive:</strong>
+      Produces heat and sometimes needs a heatsink.
+    </li>
+  </ul>
+
+</div>
+
+    <button class="collapsible">🔧 Practical Applications</button>
+<div class="content">
+
+  <ul>
+    <li>
+      <strong>Signal Amplification:</strong>
+      Used in speakers, microphones, radios, and phone audio circuits to make weak signals louder.
+    </li>
+
+    <li>
+      <strong>Electronic Switching:</strong>
+      Turns devices ON and OFF in computers, microcontrollers, and digital circuits.
+    </li>
+
+    <li>
+      <strong>Power Control:</strong>
+      Controls motors, LEDs, and power supplies by regulating current and voltage.
+    </li>
+
+    <li>
+      <strong>Computers and Smartphones:</strong>
+      Millions of transistors form processors and memory chips.
+    </li>
+
+    <li>
+      <strong>Timing and Oscillators:</strong>
+      Used in clocks, signal generators, and communication systems.
+    </li>
+  </ul>
+
+</div>
+
+
+    <div class="nav-arrows">
+      <a class="btn" href="diodos.html">⬅ Previous</a>
+      <a class="btn" href="index.html">Home ➡</a>
+    </div>
+
   </div>
+
+  <script>
+    document.querySelectorAll(".collapsible").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+
 </body>
 </html>

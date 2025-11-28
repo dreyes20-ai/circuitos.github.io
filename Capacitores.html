@@ -4,14 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Capacitores</title>
+
   <style>
+    /* ======== GENERAL PAGE STYLES ======== */
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      background: linear-gradient(135deg, #eddbba, #ffd587);
       margin: 0;
-      padding: 40px;
-      color: #222;
+      padding-left: 250px;
+      padding-top: 40px;
+      color: #5c3c01;
+      transition: 0.4s;
     }
+
+    /* ======== DARK MODE ======== */
+    body.dark {
+      background: linear-gradient(135deg, #1f1f1f, #444444);
+      color: #f5f5f5;
+    }
+
+    body.dark .card {
+      background: #2c2c2c;
+      color: #fff;
+    }
+
+    body.dark .sidebar {
+      background: #181818;
+    }
+
+    body.dark .btn {
+      background: #4e8ad9;
+    }
+
+    /* ======== SIDEBAR ======== */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 230px;
+      height: 100%;
+      background: #e8b75d;
+      color: white;
+      padding: 25px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 22px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      font-size: 18px;
+      border-radius: 6px;
+    }
+
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ======== MAIN CARD ======== */
     .card {
       max-width: 700px;
       margin: auto;
@@ -21,54 +77,194 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       animation: fadeIn 1s ease;
     }
+
     h1 {
       text-align: center;
       margin-bottom: 15px;
     }
+
     .img-box {
       text-align: center;
       margin-bottom: 20px;
     }
+
     .img-box img {
-      width: 220px;
+      width: 200px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.25);
     }
-    p {
+
+    p, li {
       font-size: 18px;
       line-height: 1.6;
     }
-    a {
+
+    ul {
+      margin-left: 20px;
+    }
+
+    /* ======== COLLAPSIBLES ======== */
+    .collapsible {
+      background: #599FE1;
+      color: white;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      font-size: 18px;
+      margin-top: 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .collapsible:hover {
+      background: #ff5d5d;
+    }
+
+    .content {
+      display: none;
+      padding: 10px 20px;
+      margin-top: 5px;
+    }
+
+    /* ======== BUTTONS ======== */
+    .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
-      background: #66a6ff;
+      background: #599FE1;
       color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
-    a:hover {
-      background: #4f86e6;
+
+    .btn:hover {
+      background: #ff5d5d;
     }
+
+    /* ======== NAVIGATION ======== */
+    .nav-arrows {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ======== ANIMATION ======== */
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);} 
-      to {opacity: 1; transform: translateY(0);} 
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- ======== SIDEBAR ======== -->
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="index.html">Inicio</a>
+    <a href="resistores.html">Resistores</a>
+    <a href="capacitores.html">Capacitores</a>
+    <a href="inductores.html">Inductores</a>
+    <a href="diodos.html">Diodos</a>
+    <a href="transistores.html">Transistores</a>
+
+    <br>
+    <button onclick="toggleDark()" class="btn" style="width:100%;">
+      🌙 Dark Mode
+    </button>
+  </div>
+
+  <!-- ======== MAIN CONTENT ======== -->
   <div class="card">
-    <h1>Capacitores</h1>
+    <h1>Capacitors</h1>
 
     <div class="img-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Polyester_film_capacitors.jpg/640px-Polyester_film_capacitors.jpg" alt="Capacitores">
+      <img src="/Images/56bf61e3887271272204edfb7a5d4614.jpg" alt="Capacitors">
     </div>
 
-    <p><strong>Aquí agregarás tu información sobre capacitores.</strong> Puedes explicar cómo almacenan energía, sus tipos, usos comunes y ejemplos en circuitos prácticos.</p>
+    <p><strong>What is a Capacitor?</strong> AA capacitor is an electronic component that stores electrical energy in an electric field, functioning like a temporary, fast-recharging battery. It consists of two conductive plates separated by an insulating material called a dielectric. When a voltage is applied, the plates accumulate opposite electrical charges and can release them later when needed. Capacitors are widely used in electronic circuits for various purposes, including filtering, energy storage, and signal coupling.</p>
 
-    <a href="index.html">⬅ Volver al menú</a>
+    <button class="collapsible">Types of Capacitors</button>
+    <div class="content">
+      <ul>
+        <li><strong>Ceramic:</strong> They are tiny, cheap, and fast, so they are used to remove noise in circuits. They do not care about direction (non-polarized), but they cannot store much energy.</li>
+        <li><strong>Electrolytic:</strong> They store a lot of energy, so they are used in power supplies. They have direction (+ and −), and connecting them wrong will damage them..</li>
+        <li><strong>film:</strong> They are tiny, cheap, and fast, so they are used to remove noise in circuits. They do not care about direction (non-polarized), but they cannot store much energy.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">📘 Formula</button>
+    <div class="content">
+      <p>C = Q / V</p>
+      <p>Where: C = Capacitance (F), Q = Charge (C), V = Voltage (V)</p>
+    </div>
+
+    <button class="collapsible">🧪 Examples</button>
+    <div class="content">
+      <p>•If a capacitor stores 0.002 C of charge at 10 V:
+C = 0.002 / 10 = 0.0002 F (200 µF)</p>
+      <p>• If the charge is 0.001 C and voltage is 5 V:
+C = 0.001 / 5 = 0.0002 F (200 µF)</p>
+<p>If the charge is 0.001 C and voltage is 5 V:
+C = 0.001 / 5 = 0.0002 F (200 µF)</p>
+    </div>
+
+    <button class="collapsible">⭐ Characteristics</button>
+    <div class="content">
+      <ul>
+        <li>Measured in Farads</li>
+        <li>Can be polarized or non-polarized</li>
+        <li>Stores electrical charge</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">🔧 Practical Applications</button>
+    <div class="content">
+      <ul>
+        <li>Power supply filtering</li>
+        <li>Signal coupling and decoupling</li>
+        <li>Energy storage</li>
+      </ul>
+    </div>
+<button class="collapsible"> Precautions</button>
+    <div class="content">
+      <ul>
+        <li><strong>Check polarity</strong>– Electrolytic capacitors must be connected the right way, or they can explode.</li>
+<li><strong>Discharge before touching</strong> – Capacitors can store charge after power is off.</li>
+<li><strong>Respect voltage rating </strong> – Never exceed the rated voltage.</li>
+<li><strong>Handle with care</strong>– Physical damage can cause failure.</li>
+<li><strong>Avoid heat</strong> – High temperature shortens capacitor life.</li>
+      </ul>
+    </div>
+    <div class="nav-arrows">
+      <a class="btn" href="resistores.html">⬅ Previous</a>
+      <a class="btn" href="inductores.html">Next ➡</a>
+    </div>
+
+    </div>
   </div>
+
+  <!-- ======== JAVASCRIPT ======== -->
+  <script>
+    // Collapsible logic
+    const coll = document.getElementsByClassName("collapsible");
+
+    for (let i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    }
+
+    // Dark mode
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
 </body>
 </html>

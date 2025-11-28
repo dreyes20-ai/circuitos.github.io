@@ -1,74 +1,204 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diodos</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      background: linear-gradient(135deg, #eddbba, #ffd587);
       margin: 0;
-      padding: 40px;
-      color: #222;
+      padding-left: 250px;
+      padding-top: 40px;
+      color: #5c3c01;
     }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 230px;
+      height: 100%;
+      background: #e8b75d;
+      padding: 25px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #ff9f1c;
+    }
+
     .card {
-      max-width: 700px;
+      max-width: 750px;
       margin: auto;
       background: white;
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      animation: fadeIn 1s ease;
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 15px;
     }
+
     .img-box {
       text-align: center;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
+
     .img-box img {
-      width: 230px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      width: 220px;
     }
-    p {
+
+    .collapsible {
+      background: #599FE1;
+      color: white;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
       font-size: 18px;
-      line-height: 1.6;
+      margin-top: 15px;
     }
-    a {
+
+    .content {
+      display: none;
+      padding: 15px;
+    }
+
+    .btn {
       display: inline-block;
-      margin-top: 20px;
       padding: 10px 20px;
-      background: #ff9a9e;
+      background: #599FE1;
       color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
     }
-    a:hover {
-      background: #ff7b7f;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);} 
-      to {opacity: 1; transform: translateY(0);} 
+
+    .nav-arrows {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Diodos</h1>
 
-    <div class="img-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/1N4148_diodes.jpg/640px-1N4148_diodes.jpg" alt="Diodos">
-    </div>
+<div class="sidebar">
+  <h2>Menu</h2>
+  <a href="index.html">Inicio</a>
+  <a href="resistores.html">Resistores</a>
+  <a href="capacitores.html">Capacitores</a>
+  <a href="inductores.html">Inductores</a>
+  <a href="diodos.html">Diodos</a>
+  <a href="transistores.html">Transistores</a>
+</div>
 
-    <p><strong>Aquí agregarás tu información sobre diodos.</strong> Puedes explicar cómo permiten el paso de corriente en un solo sentido, sus tipos y ejemplos en rectificadores o protección de circuitos.</p>
+<div class="card">
+  <h1>Diodos</h1>
 
-    <a href="index.html">⬅ Volver al menú</a>
+  <div class="img-box">
+    <img src="/Images/inside-light-emitting-diode-parts-led-unlike-bulbs-leds-do-not-generate-heat-power-loss-heating-36558504.jpg.webp" alt="Diode">
   </div>
+
+  <p>
+    <strong>What is a Diode?</strong>  
+    A diode is an electronic component that allows electric current to flow
+    in one direction only. It blocks current in the opposite direction,
+    which makes it very useful for protection and control in circuits.
+  </p>
+
+  <button class="collapsible">⚙️ How does a diode work?</button>
+  <div class="content">
+    <p>
+      A diode has two terminals: the anode (+) and the cathode (−).
+      When connected in forward bias, current flows.
+      When reversed, the diode blocks the current.
+    </p>
+  </div>
+
+  <button class="collapsible">📘 Types of Diodes</button>
+  <div class="content">
+    <ul>
+      <li><strong>Rectifier Diode:</strong> Converts AC to DC in power supplies.</li>
+      <li><strong>Zener Diode:</strong> Controls and stabilizes voltage.</li>
+      <li><strong>LED:</strong> Emits light when current flows.</li>
+      <li><strong>Schottky Diode:</strong> Very fast with low voltage drop.</li>
+      <li><strong>Signal Diode:</strong> Used in small signal circuits.</li>
+    </ul>
+  </div>
+
+  <button class="collapsible">🧮 Important Values / Formula</button>
+  <div class="content">
+    <p>
+      Typical forward voltage drop:
+    </p>
+    <ul>
+      <li>Silicon diode: ≈ 0.7V</li>
+      <li>Schottky diode: ≈ 0.2 – 0.3V</li>
+      <li>LED: 1.8V – 3.3V (depends on color)</li>
+    </ul>
+    <p>I = Is × (e^(V/(n×Vt)) - 1) </p>
+<p>
+Donde: I = Corriente, Is = Corriente de saturación, V = Voltaje, n = Factor ideal, Vt = Voltaje térmico</p>
+  </div>
+
+  <button class="collapsible">⭐ Main Characteristics</button>
+  <div class="content">
+    <ul>
+      <li>Allows current in only one direction</li>
+      <li>Has a forward voltage drop</li>
+      <li>Protects circuits from reverse polarity</li>
+      <li>Fast switching capability</li>
+    </ul>
+  </div>
+
+  <button class="collapsible">🔧 Practical Applications</button>
+  <div class="content">
+    <ul>
+      <li>AC to DC rectification</li>
+      <li>Voltage regulation (Zener)</li>
+      <li>LED lighting</li>
+      <li>Reverse polarity protection</li>
+    </ul>
+  </div>
+
+  <div class="nav-arrows">
+    <a class="btn" href="inductores.html">⬅ Previous</a>
+    <a class="btn" href="transistores.html">Next ➡</a>
+  </div>
+</div>
+
+<script>
+  const coll = document.querySelectorAll(".collapsible");
+  coll.forEach(btn => {
+    btn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
+
 </body>
 </html>

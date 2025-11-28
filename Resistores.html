@@ -1,75 +1,275 @@
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resistors</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffcc70, #ff8177);
-      margin: 0;
-      padding: 40px;
-      color: #333;
-    }
-    .card {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      animation: fadeIn 1s ease;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    .img-box {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .img-box img {
-      width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #ff8177;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    a:hover {
-      background: #ff5d5d;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);} 
-      to {opacity: 1; transform: translateY(0);} 
-    }
-  </style>
+
+<style>
+  /* ======== GENERAL PAGE STYLES ======== */
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eddbba, #ffd587);
+    margin: 0;
+    padding-left: 250px;  /* space for sidebar */
+    padding-top: 40px;
+    color: #5c3c01;
+    transition: 0.4s;
+  }
+
+  /* ======== DARK MODE ======== */
+  body.dark {
+    background: linear-gradient(135deg, #1f1f1f, #444444);
+    color: #f5f5f5;
+  }
+
+  body.dark .card {
+    background: #2c2c2c;
+    color: #fff;
+  }
+
+  body.dark .sidebar {
+    background: #181818;
+    color: #fff;
+  }
+
+  body.dark a {
+    background: #4e8ad9;
+  }
+
+  /* ======== SIDEBAR ======== */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    background: #e8b75d;
+    color: white;
+    padding: 25px;
+    
+  }
+
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 22px;
+  }
+
+  .sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 18px;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+
+  /* ======== MAIN CARD ======== */
+  .card {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .img-box {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .img-box img {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* ======== COLLAPSIBLES ======== */
+  .collapsible {
+    background: #599FE1;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    margin-top: 15px;
+    border-radius: 8px;
+  }
+
+  .content {
+    padding: 0 15px;
+    display: none;
+    margin-top: 10px;
+  }
+
+  /* ======== LINKS / BUTTONS ======== */
+  a.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #599FE1;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  a.btn:hover {
+    background: #ff5d5d;
+  }
+
+  /* Navigation arrows */
+  .nav-arrows {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Animation */
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+</style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Resistores</h1>
 
-    <div class="img-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Resistors.jpg/640px-Resistors.jpg" alt="Resistores">
-    </div>
+<!-- ========== SIDEBAR MENU ========== -->
+<div class="sidebar">
+  <h2>Menu</h2>
+  <a href="index.html">Inicio</a>
+  <a href="resistores.html">Resistores</a>
+  <a href="capacitores.html">Capacitores</a>
+  <a href="inductores.html">Inductores</a>
+  <a href="diodos.html">Diodos</a>
+  <a href="transistores.html">Transistores</a>
 
-    <p><strong>Aquí agregarás tu información sobre resistores.</strong> Puedes explicar qué son, para qué sirven, cómo funcionan y ejemplos en circuitos reales. Ya dejé todo listo para que solo pegues tu contenido cuando lo tengas.</p>
+  <br><br>
+  <button onclick="toggleDark()" style="padding:10px; width:100%; border:none; border-radius:8px; cursor:pointer;">
+    🌙 Dark Mode
+  </button>
+</div>
 
-    <a href="index.html">⬅ Volver al menú</a>
+<!-- ========== MAIN CARD ========== -->
+<div class="card">
+  <h1>Resistors</h1>
+
+  <div class="img-box">
+    <img src="/Images/resistor.jpg" alt="Resistores">
   </div>
+
+  <p><strong>What is a Resistor?</strong> Resistor limits or regulates the flow of current in a circuit. It’s measured in Ohms. Resistors are used to reduce current, adjust signal levels, divide voltages, and protect other sensitive components.</p>
+
+ <button class="collapsible">Types of Resistors</button>
+ <div class="content">
+  <img src="/Images/Different-Types-of-Resistors-Updated-2.png" alt="resistors types"
+       style="display: block; margin: 20px auto; max-width: 50%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.25);">
+
+  <ul>
+    <li><strong>Linear Resistors: </strong>They are a type of resistor whose resistence is constant and is predictable when voltage or temperature is applied, when current passes by, it creates a fixed voltage drop meaning that it always uses a certain amount of voltage. Linear resistors come in two forms: fixed and variable. </li>
+    <li><strong>Non Linear Resistors: </strong> A non-linear resistor is a component that doesn’t behave in a predictable, straight-line way. When the voltage or temperature changes, the current doesn’t follow Ohm’s law. It’s like a door that sometimes opens a little and sometimes opens a lot, even with the same push. Different types exist for special purposes.</li>
+  </ul>
+</div>
+  <!-- ========== COLLAPSIBLE SECTIONS ========== -->
+  <button class="collapsible">🎨 Color Code</button>
+  <div class="content">
+    <p><img src="/Images/resistor-color-code-bands-3-4-1024.png.avif" alt="Color Code" ></p>
+  </div>
+
+  <button class="collapsible">📘 Formula</button>
+  <div class="content">
+    <p>Fórmula de la Ley de Ohm:</p>
+    <p>
+R = V / I </p>
+    <p>
+
+Donde: R = Resistencia (Ω), V = Voltaje (V), I = Corriente (A)</p>
+  </div>
+
+  <button class="collapsible">🧪 Examples</button>
+  <div class="content">
+    <p>1. Rojo – Violeta – Marrón – Dorado
+2 (rojo) 7 (violeta) ×10 (marrón) ±5%
+Resultado: 27 × 10 = 270Ω ±5%</p>
+<p>2. Naranja – Naranja – Rojo – Plata
+3 (naranja) 3 (naranja) ×100 (rojo) ±10%
+Resultado: 33 × 100 = 3300Ω ±10%</p>
+<p>
+3.Amarillo – Violeta – Rojo – Dorado
+4 7 ×100 ±5%
+Resultado: 47 × 100 = 4,700Ω (4.7kΩ) ±5%
+</p>
+  </div>
+
+  <button class="collapsible">⭐ Characteristics</button>
+  <div class="content">
+    <p><ul>
+      <li>It is measured in Ohms (Ω)</li>
+      <li>Resistance (Ω): This is how much the resistor opposes the flow of electric current. Think of it like a narrow pipe that slows down water.</li>
+      <li>Tolerance (%): This shows how much the actual value may vary from the written value. It’s the allowed error.</li>
+      <li>Material type: Carbon, metal film, or wire-wound. This affects accuracy and stability.</li>
+      <li>Power Rating (W): This indicates how much power the resistor can safely dissipate as heat without being damaged.</li>
+    </ul></p>
+  </div>
+
+  <button class="collapsible">🔧 Practical Applications</button>
+  <div class="content">
+    <p><ul>
+      <li>Current Limiting: Resistors are used to limit the amount of current that flows through a circuit, protecting sensitive components from damage.</li>
+      <li>Voltage Division: They can be used in voltage divider circuits to create reference voltages or reduce voltage levels for other components.</li>
+      <li>Pull-up/Pull-down Resistors: These resistors are used in digital circuits to ensure that inputs to microcontrollers or logic gates settle at expected logic levels.</li>
+      <li>Signal Conditioning: Resistors can be used in filters and attenuators to modify signal characteristics.</li>
+      <li>Heat Generation: In some applications, resistors are used to generate heat, such as in heating elements.</li>
+    </ul></p>
+  </div>
+
+  <!-- ========== NAVIGATION ARROWS ========== -->
+  <div class="nav-arrows">
+    <a class="btn" href="index.html">⬅ Previous</a>
+    <a class="btn" href="capacitores.html">Next ➡</a>
+  </div>
+
+</div>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+  // Collapsible logic
+  const coll = document.getElementsByClassName("collapsible");
+  for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      let content = this.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  }
+
+  // Dark mode toggle
+  function toggleDark() {
+    document.body.classList.toggle("dark");
+  }
+</script>
+
 </body>
 </html>
